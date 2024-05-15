@@ -4,10 +4,9 @@ import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.interaction.ChatInputInteractionEvent;
 import discord4j.discordjson.json.ApplicationCommandRequest;
 import org.springframework.stereotype.Component;
-
-import jakarta.annotation.PostConstruct;
 import reactor.core.publisher.Mono;
 
+import jakarta.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +32,7 @@ public class CommandManager {
         ApplicationCommandRequest commandRequest = ApplicationCommandRequest.builder()
                 .name(command.getName())
                 .description(command.getDescription())
-                .addAllOptions(command.getOptions())
+                .addAllOptions(command.getOptions()) 
                 .build();
         long applicationId = client.getRestClient().getApplicationId().block();
         client.getRestClient().getApplicationService()
@@ -49,4 +48,3 @@ public class CommandManager {
         return Mono.empty();
     }
 }
-

@@ -18,7 +18,7 @@ public class PingCommand implements Command {
 
     @Override
     public String getDescription() {
-        return "Regresa pong!";
+        return "Returns pong!";
     }
 
     @Override
@@ -28,7 +28,7 @@ public class PingCommand implements Command {
 
     @Override
     public List<ApplicationCommandOptionData> getOptions() {
-        return Collections.emptyList();
+        return Collections.emptyList(); 
     }
 }
 
